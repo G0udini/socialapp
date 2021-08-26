@@ -1,8 +1,19 @@
-from django.urls import path
+from django.urls import path, include
+# from django.contrib.auth.views import (
+#     LoginView,
+#     LogoutView,
+#     PasswordChangeDoneView,
+#     PasswordChangeView,
+#     PasswordResetDoneView,
+#     PasswordResetView,
+#     PasswordResetConfirmView,
+#     PasswordResetCompleteView,
+# )
 
-from .views import user_login
+from .views import dashboard
 
-app_name = "account"
+# app_name = "account"
 urlpatterns = [
-    path("login/", user_login, name="login"),
+    path("", include("django.contrib.auth.urls")),
+    path("dashboard/", dashboard, name="dashboard"),
 ]
