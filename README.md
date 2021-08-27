@@ -5,3 +5,4 @@ Social network project
 2. Logout form
 3. Change password
 4. Reset pasword
+5. Register form
