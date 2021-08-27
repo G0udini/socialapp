@@ -11,10 +11,11 @@ from django.urls import path, include
 #     PasswordResetCompleteView,
 # )
 
-from .views import dashboard, register
+from .views import dashboard, register, edit
 
 # app_name = "account"
 urlpatterns = [
+    path("edit/", edit, name="edit"),
     path("register/", register, name="register"),
     path("", include("django.contrib.auth.urls")),
     path("dashboard/", dashboard, name="dashboard"),
