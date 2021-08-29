@@ -21,6 +21,7 @@ ALLOWED_HOSTS = ["mysite.com", "127.0.0.1", "localhost"]
 
 INSTALLED_APPS = [
     "account.apps.AccountConfig",
+    "images.apps.ImagesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -152,6 +153,8 @@ SOCIAL_AUTH_VK_OAUTH2_SCOPE = ["email"]
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv("SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv("SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET")
 SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ["email"]
+
+# Default social pipelines
 
 SOCIAL_AUTH_PIPELINE = (
     "social_core.pipeline.social_auth.social_details",
