@@ -5,8 +5,8 @@
 {% block content %}
 <h1>{{ image.title }}</h1>
 {% load thumbnail %}
-<a href="{{ image.iamge.url }}">
-    <img src="{% thumbnail image.image 300 %}" class="image-detail">
+<a href="{{ image.image.url }}">
+    <img src="{% thumbnail image.image '300' %}" class="image-detail">
 </a>
 {% with total_likes=image.users_like.count users_like=image.users_like.all %}
 <div class="image-info">
@@ -33,7 +33,7 @@
         <p>{{ user.first_name }}</p>
     </div>
 {% empty %}
-    Nobody likes this iamge yet.
+    Nobody likes this image yet.
 {% endfor %}
 </div>
 {% endwith %}

@@ -8,3 +8,7 @@ Social network project
 5. Register form
 6. VK and Google auth
 7. AJAX requests
+8. AJAX paginator
+9. Like/dislike func
+10. Follow/unfollow func
+11. News feed
