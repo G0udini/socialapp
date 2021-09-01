@@ -7,3 +7,4 @@ Social network project
 4. Reset pasword
 5. Register form
 6. VK and Google auth
+7. AJAX requests
