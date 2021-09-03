@@ -11,4 +11,4 @@ Social network project
 8. AJAX paginator
 9. Like/dislike func
 10. Follow/unfollow func
-11. News feed
+11. News feed with ContentType

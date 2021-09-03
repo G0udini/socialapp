@@ -11,6 +11,7 @@ from .forms import LoginForm, UserRegistrationForm, ProfileEditForm, UserEditFor
 from .models import Profile, Contact
 from action.utils import create_action
 from action.models import Action
+from images.models import Image
 
 
 def user_login(request):
@@ -87,7 +88,7 @@ def edit(request):
 
 @login_required
 def user_list(request):
-    users = User.objects.filter(is_active=True)
+    users = User.objects.select_related("profile").filter(is_active=True)
     return render(
         request, "account/user/list.html", {"section": "people", "users": users}
     )
@@ -95,7 +96,11 @@ def user_list(request):
 
 @login_required
 def user_detail(request, username):
-    user = get_object_or_404(User, username=username, is_active=True)
+    user = get_object_or_404(
+        User.objects.select_related("profile").prefetch_related("followers"),
+        username=username,
+        is_active=True,
+    )
     return render(
         request, "account/user/detail.html", {"section": "people", "user": user}
     )

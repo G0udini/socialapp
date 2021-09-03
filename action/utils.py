@@ -5,7 +5,6 @@ from .models import Action
 
 
 def create_action(user, verb, target=None):
-    print("--" * 20)
     now = timezone.now()
     last_minute = now - datetime.timedelta(seconds=60)
     similar_actions = Action.objects.filter(
@@ -13,7 +12,6 @@ def create_action(user, verb, target=None):
     )
     if target:
         target_ct = ContentType.objects.get_for_model(target)
-        print(target_ct)
         similar_actions = similar_actions.filter(
             target_ct=target_ct, target_id=target.id
         )
