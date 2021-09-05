@@ -13,3 +13,5 @@ Social network project
 10. Follow/unfollow func
 11. News feed with ContentType
 12. Signals for optimization
+13. Redis for views
+14. Most viewed with Radis
